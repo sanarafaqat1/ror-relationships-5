@@ -1,0 +1,8 @@
+<h1>Blog Posts</h1>
+<%= @books.each do |book| %>
+  <div class="well">
+   <h3><%= book.title %></h3>
+   <p><%= book.page_count %></p>
+   <%= link_to "Read More", book_path(@books), :class => 'btn btn-default'%>
+  </div>
+<% end%>

@@ -1,0 +1,22 @@
+<h1>Add Posts</h1>
+<%= form_for :book, url: book_path do |f|%>
+  <% if @book.errors.any? %>
+     <%@book.errors.full_messages.each do |msg|%>
+       <div class="alert alert-danger"> <%=msg%> </div>
+         <% end %>
+    <% end %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field(:title, {:class => 'form-control'}) %>
+  </p>
+
+  <p>
+    <%= f.label :page_count %><br>
+    <%= f.text_field(:page_count, {:class => 'form-control'}) %>
+  </p>
+
+  <p>
+    <%= f.submit({:class => 'btn btn-primary'}) %>
+  </p>
+<% end %>
